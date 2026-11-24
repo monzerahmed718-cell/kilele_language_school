@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration interest | Kilele Language School</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;padding:28px 16px;background:#f4f8fb;color:#202b3c;font-family:Arial,sans-serif;line-height:1.6}
+    main{max-width:620px;margin:35px auto;background:#fff;padding:clamp(24px,5vw,44px);border-radius:16px;box-shadow:0 12px 40px #14213d12}
+    h1{color:#14213d;margin-top:0}label{display:block;font-weight:700;margin:17px 0 6px}
+    input,select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:7px;font:inherit}
+    button{margin-top:22px;background:#00a6c8;color:#fff;border:0;border-radius:8px;padding:13px 22px;font-weight:700;font-size:1rem;cursor:pointer}
+    a{color:#007e99}#status{padding:12px 0;color:#075d70}
+    .note{background:#fff4df;padding:12px;border-radius:8px;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Register your interest</h1>
+    <p>Complete this form and choose the language you would like to learn.</p>
+    <form id="registration-form">
+      <label for="name">Your name</label>
+      <input id="name" name="name" autocomplete="name" placeholder="Your name" required>
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required>
+      <label for="language">Preferred language</label>
+      <select id="language" name="language" required>
+        <option value="">Choose a language</option><option>English</option><option>French</option><option>Portuguese</option>
+      </select>
+      <button type="submit">Send enquiry</button>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+    <p class="note">Demonstration form: connect and test a deployed Google Apps Script Web App URL before collecting real registrations. Do not enter sensitive or student-protection information on this demo page.</p>
+    <p><a href="./">← Back to home</a></p>
+  </main>
+  <script>
+    const WEB_APP_URL = "PASTE_WEB_APP_URL";
+    document.getElementById("registration-form").addEventListener("submit", async function(event) {
+      event.preventDefault();
+      const status = document.getElementById("status");
+      if (WEB_APP_URL === "PASTE_WEB_APP_URL") {
+        status.textContent = "Demo only: the school must connect its Google Apps Script endpoint before submissions can be stored.";
+        return;
+      }
+      try {
+        await fetch(WEB_APP_URL, {method:"POST", mode:"no-cors", body:new URLSearchParams(new FormData(event.target))});
+        status.textContent = "Thank you. Your enquiry has been sent.";
+        event.target.reset();
+      } catch (error) {
+        status.textContent = "We could not send your enquiry. Please try again later.";
+      }
+    });
+  </script>
+</body>
+</html>
