@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn English, French and Portuguese with Kilele Language School in Lisbon.">
+  <title>Kilele Language School | Lisbon</title>
+  <style>
+    :root{--navy:#14213d;--blue:#00a6c8;--ink:#202b3c;--muted:#627086;--paper:#f4f8fb}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65}
+    header{background:var(--navy);color:#fff;padding:18px max(6%,calc((100% - 1100px)/2));display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .brand{font-weight:800;letter-spacing:1.3px}.place{color:#c9d7ea;font-size:.9rem}
+    main{max-width:1100px;margin:54px auto;padding:0 22px}.hero{background:#fff;border-radius:20px;padding:clamp(28px,6vw,70px);box-shadow:0 16px 50px #14213d12}
+    .eyebrow{color:#0088a6;font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:.78rem}
+    h1{font-size:clamp(2.3rem,6vw,4.5rem);line-height:1.08;color:var(--navy);max-width:760px;margin:12px 0 20px}
+    .lead{font-size:1.15rem;color:var(--muted);max-width:680px}
+    .languages{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}.languages span{background:#e8f7fa;color:#075d70;padding:9px 15px;border-radius:999px;font-weight:700}
+    .notice{background:#e8f7fa;border-left:5px solid var(--blue);padding:13px 17px;margin:26px 0;border-radius:7px}
+    a.button{display:inline-block;background:var(--blue);color:white;text-decoration:none;padding:13px 22px;border-radius:8px;font-weight:700}a.button:hover{background:#0087a4}
+    footer{text-align:center;color:var(--muted);padding:28px 15px;font-size:.9rem}
+    @media(max-width:600px){header{padding:16px 20px}main{margin:25px auto}.hero{border-radius:13px}}
+  </style>
+</head>
+<body>
+  <header><div class="brand">KILELE LANGUAGE SCHOOL</div><div class="place">Lisbon, Portugal</div></header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Learn • Connect • Grow</div>
+      <h1>Open a world of languages.</h1>
+      <p class="lead">Build your confidence and connect with more people through language learning at Kilele Language School.</p>
+      <div class="languages"><span>English</span><span>Français</span><span>Português</span></div>
+      <p>Interested in joining a class? Tell us your preferred language using our registration interest form.</p>
+      <div class="notice"><strong>Welcome to Kilele.</strong> Registration enquiries are welcome.</div>
+      <a class="button" href="contact.html">Register your interest →</a>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> Kilele Language School · Lisbon, Portugal</footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
